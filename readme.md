@@ -1,5 +1,7 @@
 # Chrome extension for displaying car image on 28 car listing page
 
+<img src="demo.png" style="max-height:400px;">
+
 **How it works**
 
 1. Redirects from 28car.com to corresponding iframe that allows script to access the content.
@@ -7,6 +9,6 @@
 
 **Installing**
 
-1. Go to chrome://extensions/ in chrome
+1. Open Chrome and go to "chrome://extensions/"
 2. Click on "Load Unpacked"
-3. Select this entire directory
+3. Select this "extension" directory

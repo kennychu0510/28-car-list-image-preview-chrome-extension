@@ -69,25 +69,6 @@
 
     div.appendChild(iframe);
     iframe.onload = function (event) {
-      const loadingOverlay = iframe.contentDocument.createElement('div');
-      loadingOverlay.style.position = 'absolute';
-      loadingOverlay.style.width = '100dvw';
-      loadingOverlay.style.height = '100vh';
-      loadingOverlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-      loadingOverlay.style.top = '0';
-      loadingOverlay.style.left = '0';
-      loadingOverlay.style.right = '0';
-      loadingOverlay.style.bottom = '0';
-      loadingOverlay.style.color = 'white';
-      loadingOverlay.style.display = 'flex';
-      loadingOverlay.style.justifyContent = 'center';
-      loadingOverlay.style.alignItems = 'center';
-      loadingOverlay.style.zIndex = '1000';
-      const textContent = iframe.contentDocument.createElement('div');
-      textContent.textContent = 'Loading...';
-      textContent.style.color = 'white';
-      iframe.contentDocument.body.append(loadingOverlay);
-      loadingOverlay.append(textContent);
       window.parent.postMessage('Hello from iFrame ' + i, '*');
       const anchor = iframe.contentDocument.querySelector(`a[href^="javascript:openPic(\'sell\', ${carId},"]`);
       if (anchor) {
@@ -114,7 +95,6 @@
           }
         }, 1000);
       }
-      loadingOverlay.remove();
     };
     lastCol.replaceWith(div);
   }
