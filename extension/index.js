@@ -84,7 +84,7 @@
     div.style.border = '1px solid grey';
     const divText = document.createElement('div');
     divText.id = 'car-image-placeholder-' + i;
-    divText.textContent = 'Loading...';
+    divText.classList.add('loading');
     div.style.display = 'flex';
     div.style.justifyContent = 'center';
     div.style.alignItems = 'center';
