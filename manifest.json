@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "28 Car List Image Preview",
+  "version": "1.0.0",
+  "action": {},
+  "content_scripts": [
+    {
+      "matches": ["https://www.28car.com/", "https://dj1jklak2e.28car.com/sell_lst.php", "https://dj1jdjkadk.28car.com/sell_lst.php"],
+      "js": ["index.js"]
+    }
+  ],
+  "icons": {
+    "16": "icon.png",
+    "32": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "permissions": ["scripting", "activeTab"]
+}
