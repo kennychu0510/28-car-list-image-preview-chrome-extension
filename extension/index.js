@@ -53,13 +53,13 @@
         const imageList = data.images;
         const image = document.createElement('img');
         image.id = 'car-image-' + data.index;
-        // let imageIndex = 0;
-        // image.addEventListener('click', (event) => {
-        //   event.stopPropagation();
-        //   imageIndex++;
-        //   if (imageIndex >= imageList.length) imageIndex = 0;
-        //   document.querySelector('#car-image-' + data.index).src = imageList[imageIndex];
-        // });
+        let imageIndex = 0;
+        image.addEventListener('click', (event) => {
+          event.stopPropagation();
+          imageIndex++;
+          if (imageIndex >= imageList.length) imageIndex = 0;
+          document.querySelector('#car-image-' + data.index).src = imageList[imageIndex];
+        });
         image.src = imageList[0];
         image.style.width = '100%';
         image.style.height = 'auto';
@@ -116,7 +116,7 @@
       if (anchors) {
         const imageSrcList = [];
         for (let anchor of anchors) {
-          imageSrcList.push(anchor.querySelector('img').getAttribute('src'));
+          imageSrcList.push(anchor.querySelector('img').getAttribute('src').replace('_s.jpg', '_b.jpg'));
         }
         window.top.postMessage(
           JSON.stringify({
@@ -133,7 +133,3 @@
     lastCol.replaceWith(div);
   }
 })();
-
-
-//src="https://djlfajk23a.28car.com/data/image/sell/2384000/2384724/369d9a48/2384724_3_s.jpg"
-//	https://djlfajk23a.28car.com/data/image/sell/2384000/2384724/369d9a48/2384724_m.jpg
