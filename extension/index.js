@@ -1,4 +1,4 @@
-(function () {
+(async function () {
   'use strict';
   const domain1 = 'https://dj1jdjkadk.28car.com';
   const domain2 = 'https://dj1jklak2e.28car.com';
@@ -108,24 +108,28 @@
     iframe.style.overflow = 'hidden';
     iframe.style.zIndex = '-1';
     iframe.style.position = 'absolute';
+    
+    setTimeout(() => {
+      div.appendChild(iframe);
+    }, i * 100)
 
-    div.appendChild(iframe);
     iframe.onload = function (event) {
-      window.top.postMessage('Hello from iFrame ' + i, '*');
       const anchors = iframe.contentDocument.querySelectorAll(`a[href^="javascript:openPic(\'sell\', ${carId},"]`);
       if (anchors) {
         const imageSrcList = [];
         for (let anchor of anchors) {
           imageSrcList.push(anchor.querySelector('img').getAttribute('src').replace('_s.jpg', '_b.jpg'));
         }
-        window.top.postMessage(
-          JSON.stringify({
-            index: i,
-            images: imageSrcList,
-            type: 'car-image',
-          }),
-          '*'
-        );
+        if (imageSrcList.length > 0) {
+          window.top.postMessage(
+            JSON.stringify({
+              index: i,
+              images: imageSrcList,
+              type: 'car-image',
+            }),
+            '*'
+          );
+        }
       } else {
         updateDivText('No image found');
       }
