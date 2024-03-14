@@ -5,7 +5,7 @@
   "action": {},
   "content_scripts": [
     {
-      "matches": ["https://www.28car.com/", "https://dj1jklak2e.28car.com/sell_lst.php", "https://dj1jdjkadk.28car.com/sell_lst.php"],
+      "matches": ["https://www.28car.com/*", "https://dj1jklak2e.28car.com/sell_lst.php/*", "https://dj1jdjkadk.28car.com/sell_lst.php/*"],
       "js": ["index.js"]
     }
   ],
