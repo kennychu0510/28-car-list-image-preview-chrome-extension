@@ -198,7 +198,7 @@
       if (anchors) {
         const imageSrcList = [];
         for (let anchor of anchors) {
-          imageSrcList.push(anchor.querySelector('img').getAttribute('src').replace('_s.jpg', '_b.jpg'));
+          imageSrcList.push(anchor.querySelector('img')?.getAttribute('src')?.replace(/_s\.jpg|_m\.jpg/g, '_b.jpg'));
         }
         if (imageSrcList.length > 0) {
           window.top.postMessage(
