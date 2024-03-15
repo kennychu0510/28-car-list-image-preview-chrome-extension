@@ -10,6 +10,12 @@
       "css": ["index.css"]
     }
   ],
+  "web_accessible_resources": [
+    {
+      "resources": [ "logo/*" ],
+      "matches": [ "https://dj1jklak2e.28car.com/*", "https://dj1jdjkadk.28car.com/*" ]
+    }
+  ],
   "icons": {
     "16": "icon.png",
     "32": "icon.png",
